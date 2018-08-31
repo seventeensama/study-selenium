@@ -1,3 +1,8 @@
-在browser = webdriver.Firefox()这句话的时候报错了，typeerror：'module' object is not callable，目前还不知道怎么办
-...不加（）好像就可以了browser = webdriver.Firefox
+1.在browser = webdriver.Firefox()这句话的时候报错了，typeerror：'module' object is not callable，目前还不知道怎么办
+   办法： ...不加（）好像就可以了browser = webdriver.Firefox
 可是为什么呢
+
+
+2.在browser.get("http://www.yahoo.com")这句话报错，typeerror：get() missing 1 required positional argument：‘url’
+   办法：browser.get(url="https://www.baidu.com")
+  参考 https://blog.csdn.net/monkey7777/article/details/52150968  待解决
