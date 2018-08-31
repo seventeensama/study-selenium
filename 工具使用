@@ -1,0 +1,2 @@
+在Python3.6中使用的selenium
+导入selenium包的时候一直导不进去，后来发现Python3.6版本里的pip是pip3，这换了pip3才算安装对了selenium，但是还是提示‘no model named selenium’，后来经过搜索，参考https://www.cnblogs.com/HuangXiaoJuan/p/8665796.html这篇，终于写对了，我写的是python3.6 -m pip install -U selenium
