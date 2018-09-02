@@ -1,4 +1,4 @@
-1.在browser = webdriver.Firefox()这句话的时候报错了，typeerror：'module' object is not callable，目前还不知道怎么办
+（误）1.在browser = webdriver.Firefox()这句话的时候报错了，typeerror：'module' object is not callable，目前还不知道怎么办
    办法： ...不加（）好像就可以了browser = webdriver.Firefox
 可是为什么呢
 
@@ -6,3 +6,6 @@
 2.在browser.get("http://www.yahoo.com")这句话报错，typeerror：get() missing 1 required positional argument：‘url’
    办法：browser.get(url="https://www.baidu.com")
   参考 https://blog.csdn.net/monkey7777/article/details/52150968  待解决
+  
+ 
+3.解决1.2,1的那种解决方式不对，去掉括号后面会引起问题。经过查找资料，发现Firefox和selenium是有版本兼容问题的，selenium3.0以上的版本需要Firefox48还是多少以上的，而高版本Firefox需要安装驱动，下载geckodriver  https://github.com/mozilla/geckodriver/releases 解压把exe文件放在usr/bin文件夹中，就可以运行browser = webdriver.Firefox()
