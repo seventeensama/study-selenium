@@ -9,3 +9,5 @@
   
  
 3.解决1.2,1的那种解决方式不对，去掉括号后面会引起问题。经过查找资料，发现Firefox和selenium是有版本兼容问题的，selenium3.0以上的版本需要Firefox48还是多少以上的，而高版本Firefox需要安装驱动，下载geckodriver  https://github.com/mozilla/geckodriver/releases 解压把exe文件放在usr/bin文件夹中，就可以运行browser = webdriver.Firefox()
+而且！再写这句话的时候需要引用from selenium.webdriver.common.keys import Keys这句话，才不会报错。 
+
