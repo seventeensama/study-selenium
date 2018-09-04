@@ -1,1 +1,71 @@
 
+------以哔哩哔哩为例-------失败了-----------下面是亚马逊为例-----------
+#在Linux环境下
+python3.6
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver import ActionChains
+from selenium.common.exceptions import UnexpectedAlertPresentException
+from time import sleep
+
+browser =webdriver.Firefox()
+browser.get('https://www.bilibili.com')
+browser.find_element_by_class_name('face').click()
+browser.find_element_by_id('login-username').send_keys('xxxxxxxx')
+browser.find_element_by_id('login-passwd').send_keys('*******')
+//验证
+button=browser.find_element_by_class_name('gt_slider_knob.gt_show')
+action = ActionChains(browser)            # 实例化一个action对象
+action.click_and_hold(button).perform()  # perform()用来执行ActionChains中存储的行为
+
+***
+//以下方法理论上可行，但是几次失败之后验证页面会刷新，导致运行失败
+for index in range(220):
+    try:
+        action = ActionChains(browser)            
+        action.click_and_hold(button).perform() 
+        action.move_by_offset(10, 0).perform() 
+    except UnexpectedAlertPresentException:
+        break
+    action.reset_actions()
+    sleep(0.1)
+ //  加入action = ActionChains(browser)            
+        action.click_and_hold(button).perform() 这两句话是想刷新了页面也可以继续执行，但是没成功，仔细想想这种‘试’的方法不太可取
+***
+x=0
+while(x<=220):
+     action = ActionChains(browser)            
+     action.click_and_hold(button).perform() 
+     action.move_by_offset(x, 28).perform()
+     try：
+         if browser.find_element_by_class_name('logout') is True：
+             break
+     expected:
+         x=x+5
+         
+      try:
+          if browser.find_element_by_class_name('gt_guide_tip.gt_show') is False:
+                break
+      except:
+          x=x+5
+      
+
+action.reset_actions()
+action.move_by_offset(180, 0).perform()  # 移动滑块
+
+
+
+
+
+----------------亚马逊----------------------
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver import ActionChains
+
+>>>browswe=webdriver.Firefox()
+>> >browser.get('https://www.amazon.cn/')
+>>> browser.find_element_by_class_name('nav-line-2').click()
+>>> browser.find_element_by_id('ap_email').send_keys('xxxxxxxxxxxxx')
+>>> browser.find_element_by_id('ap_password').send_keys('**********')
+>>> browser.find_element_by_id('signInSubmit').click()
+
