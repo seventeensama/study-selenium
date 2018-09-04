@@ -62,10 +62,12 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver import ActionChains
 
->>>browswe=webdriver.Firefox()
->> >browser.get('https://www.amazon.cn/')
+>>> browser=webdriver.Firefox()
+>>> browser.get('https://www.amazon.cn/')
 >>> browser.find_element_by_class_name('nav-line-2').click()
 >>> browser.find_element_by_id('ap_email').send_keys('xxxxxxxxxxxxx')
 >>> browser.find_element_by_id('ap_password').send_keys('**********')
 >>> browser.find_element_by_id('signInSubmit').click()
 
+username=browser.find_element_by_class_name('nav-line-1')
+print （username.text）
